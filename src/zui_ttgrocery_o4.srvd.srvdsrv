@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TTGROCERY'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TTGROCERY'
+  }
+}
+define service ZUI_TTGROCERY_O4 provider contracts odata_v4_ui {
+  expose ZC_TTGROCERY as Grocery;
+}

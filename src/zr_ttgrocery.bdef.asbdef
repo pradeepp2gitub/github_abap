@@ -1,0 +1,57 @@
+managed implementation in class ZBP_R_TTGROCERY unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_TTGROCERY alias Grocery
+persistent table ZTT_GROCERY
+extensible
+draft table ZTTGROCERY_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+{
+  field ( readonly )
+   ID,
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( numbering : managed )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+ action checkExpirationDate result[1] $self;
+
+  mapping for ZTT_GROCERY corresponding extensible
+  {
+    ID = ID;
+    Product = PRODUCT;
+    Category = CATEGORY;
+    Brand = BRAND;
+    Price = PRICE;
+    Currency = CURRENCY;
+    Quantity = QUANTITY;
+    Purchasedate = PURCHASEDATE;
+    Expirationdate = EXPIRATIONDATE;
+    Expired = EXPIRED;
+    Rating = RATING;
+    Note = NOTE;
+    Createdby = CREATEDBY;
+    Createdat = CREATEDAT;
+    Lastchangedby = LASTCHANGEDBY;
+    Lastchangedat = LASTCHANGEDAT;
+    Locallastchanged = LOCALLASTCHANGED;
+  }
+
+}

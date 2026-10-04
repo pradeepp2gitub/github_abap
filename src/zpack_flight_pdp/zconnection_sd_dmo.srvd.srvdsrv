@@ -1,0 +1,5 @@
+@EndUserText.label: 'Connection Service Def'
+define service ZConnection_SD_DMO {
+  expose ZI_CONNECTION_DMO;
+  expose ZI_FLIGHT_DMO_R;
+}

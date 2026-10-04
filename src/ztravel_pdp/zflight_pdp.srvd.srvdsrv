@@ -1,0 +1,5 @@
+@EndUserText.label: 'Flight Service'
+define service Zflight_pdp {
+  expose ZI_CONNECTION_PDP;
+  expose ZI_FLIGHT_PDP_R;
+}
