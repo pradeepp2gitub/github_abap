@@ -1,0 +1,5 @@
+CLASS zcl_bp_booking_dmo_m DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel_dmo_m.
+ENDCLASS.
+
+CLASS zcl_bp_booking_dmo_m IMPLEMENTATION.
+ENDCLASS.
