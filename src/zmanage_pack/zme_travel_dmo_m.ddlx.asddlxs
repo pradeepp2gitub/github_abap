@@ -14,7 +14,7 @@ annotate view zc_travel_dmo_m with
 {
   @UI.facet: [{id: 'Travel', type: #IDENTIFICATION_REFERENCE, position: 10, purpose: #STANDARD, label: 'Travel' },
               {id: 'Booking', type: #LINEITEM_REFERENCE, position: 20, purpose: #STANDARD, label: 'Booking', targetElement: '_Booking' }  ]
-  @UI.lineItem: [{position: 10 }]
+  @UI.lineItem: [{position: 10 }, { type: #FOR_ACTION, dataAction: 'copyTravel', label: 'Copy Travel' }]
   @Search.defaultSearchElement: true
   @UI.identification: [{position: 10 }]
   TravelId;
