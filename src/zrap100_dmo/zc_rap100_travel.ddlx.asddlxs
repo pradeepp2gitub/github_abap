@@ -1,0 +1,219 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travels',
+    imageUrl: 'Attachment',
+    description: { type: #STANDARD, value: 'TravelID' }
+    }
+
+annotate view ZC_RAP100_TRAVEL with
+{
+  @UI.facet: [ {
+    label: 'Travel',
+    id: 'idIdentification',
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+  {
+                      id: 'Upload',
+                      purpose: #STANDARD,
+                      type: #FIELDGROUP_REFERENCE,
+                      parentId: 'GeneralInfo',
+                      label: 'Upload Invoice',
+                      position: 20,
+                      targetQualifier: 'Upload'
+                  } ]
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10, importance: #HIGH
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  TravelID;
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20, importance: #HIGH
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  AgencyID;
+
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  CustomerID;
+
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  BeginDate;
+
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  EndDate;
+
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  BookingFee;
+
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  TotalPrice;
+
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  Description;
+
+  @UI: {
+      lineItem:       [ { position: 100, importance: #HIGH }
+                        ,{ type: #FOR_ACTION, dataAction: 'copyTravel', label: 'Copy Travel' }
+                        ,{ type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' }
+                        ,{ type: #FOR_ACTION, dataAction: 'rejectTravel', label: 'Reject Travel' }
+           ],
+      identification: [ { position: 100 }
+                       ,{ type: #FOR_ACTION, dataAction: 'deductDiscount', label: 'Deduct Discount' }
+                       ,{ type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' }
+                       ,{ type: #FOR_ACTION, dataAction: 'rejectTravel', label: 'Reject Travel' }
+           ],
+        textArrangement: #TEXT_ONLY
+      }
+  OverallStatus;
+
+  @UI.identification: [ { position: 100  } ]
+  @UI:
+  { fieldGroup:     [ { position: 50, qualifier: 'Upload' , label: 'Attachment'} ]}
+  @UI.lineItem: [ {  position: 100   } ]
+  Attachment;
+
+  //  @UI.identification: [ {
+  //    position: 110
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 110
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 110
+  //  } ]
+  //
+  @UI.hidden: true
+  MimeType;
+
+  //  @UI.identification: [ {
+  //    position: 120
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 120
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 120
+  //  } ]
+  @UI.hidden: true
+  FileName;
+
+  //  @UI.identification: [ {
+  //    position: 130
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 130
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 130
+  //  } ]
+  @UI.hidden: true
+  CreatedBy;
+
+  //  @UI.identification: [ {
+  //    position: 140
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 140
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 140
+  //  } ]
+  @UI.hidden: true
+  CreatedAt;
+  //
+  //  @UI.identification: [ {
+  //    position: 150
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 150
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 150
+  //  } ]
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  //  @UI.identification: [ {
+  //    position: 160
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 160
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 160
+  //  } ]
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  //  @UI.identification: [ {
+  //    position: 170
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 170
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 170
+  //  } ]
+  @UI.hidden: true
+  LastChangedAt;
+}
